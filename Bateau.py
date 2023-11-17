@@ -32,15 +32,4 @@ class Bateau:
 
 
 
-        
-# - Jérémy:
-#     + 1 éléments*
-#     + 2 get_y 
-#     + 3 get_x 
-#     + 4 est_coule 
 
-        
-
-
-
-        
