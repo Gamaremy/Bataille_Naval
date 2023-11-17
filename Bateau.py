@@ -19,16 +19,14 @@ class Bateau:
        else:
            for i in range(self.taille):
                if self.cordonneex == x and self.cordonneey + i == y:
+                  self.get_touche(i)
                   return True
        return False
 
-    def get_touche (self) :
-        return self.touche
+    def get_touche(self, index):
+       self.boollist_element[index] = True
+       self.touche += 1
 
-    def grille(self):
-        grillexy = [[0] * 10 for _ in range(9)]
-        return(grillexy)
-    
     def element(self):
         boollist_element=[False]*self.taille
         return(boollist_element)
