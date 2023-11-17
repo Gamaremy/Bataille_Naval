@@ -5,7 +5,8 @@ class Bateau:
         self.taille = int(taille)
         self.horizontal = bool(horizontal)
         self.touche = 0
-        
+        self.boollist_element=self.element()
+
     def grille(self):
         grillexy = [[0] * 10 for _ in range(9)]
         return(grillexy)
@@ -23,7 +24,6 @@ class Bateau:
 
     def get_touche (self) :
         return self.touche
-        self.boollist_element=self.element()
 
     def grille(self):
         grillexy = [[0] * 10 for _ in range(9)]
