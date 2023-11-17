@@ -20,8 +20,12 @@ class Bateau:
                   return True
        return False
 
-    def get_touche (self)  :
+    def get_touche (self) :
         return self.touche
 
+    def get_taille(self) :
+        return self.taille
 
+    def get_horizontal(self):
+        return self.horizontal
         
