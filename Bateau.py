@@ -4,6 +4,25 @@ class Bateau:
         self.cordonneey = int(cordonneey)
         self.taille = int(taille)
         self.horizontal = bool(horizontal)
+        self.touche = 0
+        
+    def grille(self):
+        grillexy = [[0] * 10 for _ in range(9)]
+        return(grillexy)
+        
+    def est_touche(self, x, y):
+       if self.horizontal:
+           for i in range(self.taille):
+               if self.cordonneex + i == x and self.cordonneey == y:
+                  return True
+       else:
+           for i in range(self.taille):
+               if self.cordonneex == x and self.cordonneey + i == y:
+                  return True
+       return False
+
+    def get_touche (self) :
+        return self.touche
         self.boollist_element=self.element()
 
     def grille(self):
@@ -30,6 +49,9 @@ class Bateau:
         else:
             return(False)
 
+    def get_taille(self) :
+        return self.taille
 
-
+    def get_horizontal(self):
+        return self.horizontal
 
