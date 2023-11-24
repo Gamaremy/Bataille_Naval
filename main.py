@@ -1,16 +1,15 @@
 from Bateau import Bateau 
+from util import Grille 
 
 
 
 def main():
+    grilleA = Grille()
+    print(grilleA)
     test=Bateau(1,1,3,True)
-    grille=test.grille()
-    print(grille)
     print(test.est_touche(1,1))
-    print(test.get_touche())
     print(test.get_x())
     print(test.get_y())
-    print(test.element())
     print(test.est_coule())
    
     
