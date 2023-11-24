@@ -1,51 +1,55 @@
 class Bateau:
-    def __init__(self, cordonneex=1,cordonneey=1,taille=1,horizontal=True):
-        self.cordonneex = int(cordonneex)
-        self.cordonneey = int(cordonneey)
-        self.taille = int(taille)
-        self.horizontal = bool(horizontal)
+    def __init__(self, x=0,y=0,taille=1,horizontal=True):
+        # check attributs correct type
+        if type(x) != int or type(y) != int or type(taille) != int or type(horizontal) != bool:
+            raise Exception("Mauvais type de données")
+        self.x = x
+        self.y = y
+        self.taille = taille
+        self.horizontal = horizontal
         self.touche = 0
-        self.boollist_element=self.element()
+        # liste en intension de booléen de la taille du bateau
+        self.nbTouche=[False for i in range(taille)]
 
     def grille(self):
-        grillexy = [[0] * 10 for _ in range(9)]
-        return(grillexy)
+        self.grillexy = [[0] * 10 for _ in range(9)]
+        return(self.grillexy)
+
+    def print_grille(self):
+        for i in self.grillexy :
+            print("|",end="")
+            for j in i :
+                print(" ",j," ", end="")
+            print("|")
         
     def est_touche(self, x, y):
        if self.horizontal:
            for i in range(self.taille):
-               if self.cordonneex + i == x and self.cordonneey == y:
+               if self.x + i == x and self.y == y:
                   return True
        else:
            for i in range(self.taille):
-               if self.cordonneex == x and self.cordonneey + i == y:
+               if self.x == x and self.y + i == y:
                   self.get_touche(i)
                   return True
        return False
 
     def get_touche(self, index):
-       self.boollist_element[index] = True
-       self.touche += 1
+        self.nbTouche[index] = True
+        self.touche += 1
+        return "touché" if self.est_coule == False else "coulé"
 
-    def element(self):
-        boollist_element=[False]*self.taille
-        return(boollist_element)
     def get_x(self):
-
-        return(self.cordonneex)
+        return(self.x)
       
     def get_y(self):
-        return(self.cordonneey)
+        return(self.y)
 
     def est_coule(self):
-        count=0
-        for i in range(self.taille):
-            if self.boollist_element[i] == True:
-                count+=1
-        if count==self.taille:
-            return(True)
-        else:
-            return(False)
+        for b in self.nbTouche :
+            if not b :  # if b == False
+                return False
+        return True
 
     def get_taille(self) :
         return self.taille
