@@ -56,4 +56,6 @@ class Bateau:
 
     def get_horizontal(self):
         return self.horizontal
-
+    def avance(self, a, b):
+       self.x += a
+       self.y += b
