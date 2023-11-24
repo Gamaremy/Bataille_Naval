@@ -1,7 +1,17 @@
 class Grille:
     def __init__(self):
-        self.grillexy = [[0] * 10 for _ in range(9)]
-
+        # Grille pour les bateaux
+        self.grillexy = [[0] * 10 for _ in range(10)]
+         # Grille pour les attaques
+        self.grille_attaques = [[' '] * 10 for _ in range(10)]
+    def afficher_grille(self, joueur):
+        if joueur == "moi":
+            print("Ma Grille de Bateaux:")
+            grille = self.grillexy
+        else:
+            print("Grille des Attaques:")
+            grille = self.grille_attaques
+        return grille
     def __str__(self):
         s = "";
         # Ajoutez les chiffres de la grille (noms de lignes)

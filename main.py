@@ -6,6 +6,8 @@ from util import Grille
 def main():
     grilleA = Grille()
     grilleB = Grille()
+    grilleA.afficher_grille("moi")
+    grilleB.afficher_grille("adversaire")
     #Afficher la Grille A
     print("Grille du Joueur 1:")
     print(grilleA)
