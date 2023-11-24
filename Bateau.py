@@ -3,6 +3,10 @@ class Bateau:
         # check attributs correct type
         if type(x) != int or type(y) != int or type(taille) != int or type(horizontal) != bool:
             raise Exception("Mauvais type de données")
+        if x > 10 or y > 10 :
+            raise Exception("En dehors de la grille")
+        if horizontal==True and x+taille > 10 or  horizontal==False and y+taille > 10 :
+            raise Exception("En dehors de la grille")
         self.x = x
         self.y = y
         self.taille = taille
