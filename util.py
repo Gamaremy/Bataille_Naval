@@ -17,3 +17,8 @@ class Grille:
                 s +=" " +  str(self.grillexy[i][j])  +" "
             s+="| \n"
         return s
+    def avance(self, x, y, touche_bateau):
+        if touche_bateau:
+            self.grillexy[x][y] = "X"
+        else:
+            self.grillexy[x][y] = "+"
