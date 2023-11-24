@@ -24,7 +24,7 @@ def creation():
         print("\n")
         BateauJoueur[NomJoueur]=[]
         print(f"Joueur {NomJoueur} a vous de paramètrer votre plateau ! ")
-        for i in range(0,5):
+        for i in range(0,1):
             print("Bateau numéro :",i+1)
             if i == 0 or i == 1: 
                 print("Plaçons les bateaux de taille 2 \n ")
@@ -66,10 +66,15 @@ def creation():
                     Horizon_ou_Verti=False  
                 BateauJoueur[NomJoueur].append(Bateau(x,y,5,Horizon_ou_Verti))
             print("\n")
+    return BateauJoueur
 
 
         
 
 if __name__ == '__main__':
    main()
-   creation()
+   Essai=creation()
+
+   print(Essai)
+
+
